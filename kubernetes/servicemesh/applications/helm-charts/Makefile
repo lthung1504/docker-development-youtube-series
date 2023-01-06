@@ -1,3 +1,4 @@
+# following https://kubernetes.github.io/ingress-nginx/deploy/
 download:
 	helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx && helm pull ingress-nginx/ingress-nginx && tar -xzf *.tgz && rm *.tgz
 
