@@ -42,7 +42,7 @@ spec:
       port: 80
       targetPort: 80
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
@@ -56,7 +56,12 @@ spec:
     http:
       paths:
       - path: /home(/|$)(.*)
+        pathType: ImplementationSpecific
         backend:
-          serviceName: videos-web
-          servicePort: 80
+          #serviceName: videos-web
+          #servicePort: 80
+          service:
+            name: videos-web
+            port:
+              number: 80
 

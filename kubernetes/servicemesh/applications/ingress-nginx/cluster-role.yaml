@@ -1,4 +1,5 @@
-apiVersion: rbac.authorization.k8s.io/v1beta1
+#apiVersion: rbac.authorization.k8s.io/v1beta1: this will cause issue of not found mapping, looks like deprecated
+apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: nginx-ingress-clusterrole

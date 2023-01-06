@@ -49,7 +49,7 @@ spec:
       port: 80
       targetPort: 10010
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
@@ -63,8 +63,14 @@ spec:
     http:
       paths:
       - path: /api/playlists(/|$)(.*)
+        pathType: ImplementationSpecific
         backend:
-          serviceName: playlists-api
-          servicePort: 80
+          #serviceName: playlists-api
+          #servicePort: 80
+          service:
+            name: playlists-api
+            port:
+              number: 80
+
 
 
